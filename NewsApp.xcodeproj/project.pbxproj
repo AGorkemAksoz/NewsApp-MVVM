@@ -12,6 +12,9 @@
 		DD4F5F5C297434EE008EA29E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F5B297434EE008EA29E /* ViewController.swift */; };
 		DD4F5F61297434EE008EA29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD4F5F60297434EE008EA29E /* Assets.xcassets */; };
 		DD4F5F64297434EE008EA29E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4F5F62297434EE008EA29E /* LaunchScreen.storyboard */; };
+		DD4F5F722974396F008EA29E /* APIURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F712974396F008EA29E /* APIURLs.swift */; };
+		DD4F5F7429743AD8008EA29E /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F7329743AD8008EA29E /* NetworkHelper.swift */; };
+		DD4F5F7629743B32008EA29E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F7529743B32008EA29E /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		DD4F5F60297434EE008EA29E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD4F5F63297434EE008EA29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD4F5F65297434EE008EA29E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD4F5F712974396F008EA29E /* APIURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURLs.swift; sourceTree = "<group>"; };
+		DD4F5F7329743AD8008EA29E /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		DD4F5F7529743B32008EA29E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +62,63 @@
 			children = (
 				DD4F5F57297434EE008EA29E /* AppDelegate.swift */,
 				DD4F5F59297434EE008EA29E /* SceneDelegate.swift */,
+				DD4F5F6B297437C8008EA29E /* Extensions */,
+				DD4F5F6C297437D0008EA29E /* Views */,
+				DD4F5F6D297437DE008EA29E /* Model */,
+				DD4F5F6E297437EF008EA29E /* Network */,
+				DD4F5F6F297437F9008EA29E /* Service */,
+				DD4F5F70297437FF008EA29E /* Resources */,
+			);
+			path = NewsApp;
+			sourceTree = "<group>";
+		};
+		DD4F5F6B297437C8008EA29E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD4F5F6C297437D0008EA29E /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				DD4F5F5B297434EE008EA29E /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD4F5F6D297437DE008EA29E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD4F5F6E297437EF008EA29E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DD4F5F7529743B32008EA29E /* NetworkManager.swift */,
+				DD4F5F712974396F008EA29E /* APIURLs.swift */,
+				DD4F5F7329743AD8008EA29E /* NetworkHelper.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DD4F5F6F297437F9008EA29E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DD4F5F70297437FF008EA29E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				DD4F5F60297434EE008EA29E /* Assets.xcassets */,
 				DD4F5F62297434EE008EA29E /* LaunchScreen.storyboard */,
 				DD4F5F65297434EE008EA29E /* Info.plist */,
 			);
-			path = NewsApp;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4F5F7629743B32008EA29E /* NetworkManager.swift in Sources */,
+				DD4F5F722974396F008EA29E /* APIURLs.swift in Sources */,
 				DD4F5F5C297434EE008EA29E /* ViewController.swift in Sources */,
+				DD4F5F7429743AD8008EA29E /* NetworkHelper.swift in Sources */,
 				DD4F5F58297434EE008EA29E /* AppDelegate.swift in Sources */,
 				DD4F5F5A297434EE008EA29E /* SceneDelegate.swift in Sources */,
 			);
@@ -277,7 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DC2CCCCLGJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NewsApp/Info.plist;
+				INFOPLIST_FILE = NewsApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -304,7 +364,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DC2CCCCLGJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NewsApp/Info.plist;
+				INFOPLIST_FILE = NewsApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

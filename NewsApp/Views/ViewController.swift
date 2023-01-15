@@ -8,14 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let newsServices = NewsService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemMint
         
+        getNews()
+        
+        
     }
-
+    
+    func getNews() {
+        newsServices.getNews { result, error in
+            if let result = result {
+                print(result)
+            }
+        }
+    }
 
 }
 

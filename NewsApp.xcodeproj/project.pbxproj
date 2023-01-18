@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD4F5F58297434EE008EA29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F57297434EE008EA29E /* AppDelegate.swift */; };
 		DD4F5F5A297434EE008EA29E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F59297434EE008EA29E /* SceneDelegate.swift */; };
-		DD4F5F5C297434EE008EA29E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F5B297434EE008EA29E /* ViewController.swift */; };
+		DD4F5F5C297434EE008EA29E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F5B297434EE008EA29E /* HomeViewController.swift */; };
 		DD4F5F61297434EE008EA29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD4F5F60297434EE008EA29E /* Assets.xcassets */; };
 		DD4F5F64297434EE008EA29E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4F5F62297434EE008EA29E /* LaunchScreen.storyboard */; };
 		DD4F5F722974396F008EA29E /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F712974396F008EA29E /* URLBuilder.swift */; };
@@ -17,13 +17,14 @@
 		DD4F5F7629743B32008EA29E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F7529743B32008EA29E /* NetworkManager.swift */; };
 		DD4F5F782974431C008EA29E /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F772974431C008EA29E /* NewsService.swift */; };
 		DD4F5F7A297444CD008EA29E /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F79297444CD008EA29E /* News.swift */; };
+		DD4F5F7D29787351008EA29E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F5F7C29787351008EA29E /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD4F5F54297434EE008EA29E /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4F5F57297434EE008EA29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD4F5F59297434EE008EA29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD4F5F5B297434EE008EA29E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD4F5F5B297434EE008EA29E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DD4F5F60297434EE008EA29E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD4F5F63297434EE008EA29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD4F5F65297434EE008EA29E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		DD4F5F7529743B32008EA29E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD4F5F772974431C008EA29E /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		DD4F5F79297444CD008EA29E /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		DD4F5F7C29787351008EA29E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,7 @@
 		DD4F5F6C297437D0008EA29E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DD4F5F5B297434EE008EA29E /* ViewController.swift */,
+				DD4F5F7B29787334008EA29E /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +127,15 @@
 				DD4F5F65297434EE008EA29E /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD4F5F7B29787334008EA29E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DD4F5F5B297434EE008EA29E /* HomeViewController.swift */,
+				DD4F5F7C29787351008EA29E /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,9 +209,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4F5F7629743B32008EA29E /* NetworkManager.swift in Sources */,
+				DD4F5F7D29787351008EA29E /* HomeViewModel.swift in Sources */,
 				DD4F5F722974396F008EA29E /* URLBuilder.swift in Sources */,
 				DD4F5F7A297444CD008EA29E /* News.swift in Sources */,
-				DD4F5F5C297434EE008EA29E /* ViewController.swift in Sources */,
+				DD4F5F5C297434EE008EA29E /* HomeViewController.swift in Sources */,
 				DD4F5F782974431C008EA29E /* NewsService.swift in Sources */,
 				DD4F5F7429743AD8008EA29E /* NetworkHelper.swift in Sources */,
 				DD4F5F58297434EE008EA29E /* AppDelegate.swift in Sources */,

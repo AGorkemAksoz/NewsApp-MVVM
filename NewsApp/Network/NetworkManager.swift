@@ -12,22 +12,21 @@ final class NetworkManager {
     func request<T: Codable>(type: T.Type, url: String, method: HTTPMethods, completion: @escaping (Result<T, ErrorTypes>) -> ()) {
         let session = URLSession.shared
         
-        if let url = URL(string: url) {
-            var request = URLRequest(url: url)
+        if let url = URL(string: url){
+            var request =  URLRequest(url: url)
             request.httpMethod = method.rawValue
             
-            let dataTask = session.dataTask(with: request) { data, respone, error in
+            let dataTask = session.dataTask(with: request) { data, response, error in
                 if let _ = error {
                     completion(.failure(.generalError))
                 } else if let data = data {
                     self.handleWithData(data: data) { response in
                         completion(response)
                     }
-                } else{
+                } else {
                     completion(.failure(.invalidURL))
                 }
             }
-            
             dataTask.resume()
         }
     }

@@ -5,7 +5,9 @@
 //  Created by Ali Görkem Aksöz on 15.01.2023.
 //
 
+
 import Foundation
+
 
 // MARK: - News
 struct News: Codable {
@@ -21,7 +23,7 @@ struct Article: Codable {
     let title, description: String?
     let url: String?
     let urlToImage: String?
-    let publishedAt: Date?
+    let publishedAt: String?
     let content: String?
 }
 
@@ -29,3 +31,20 @@ struct Article: Codable {
 struct Source: Codable {
     let id, name: String?
 }
+
+
+
+
+
+//struct News: Codable {
+//    let userID, id: Int?
+//    let title: String?
+//    let completed: Bool?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case userID = "userId"
+//        case id, title, completed
+//    }
+//}
+
+

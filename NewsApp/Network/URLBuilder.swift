@@ -3,8 +3,7 @@
 //  NewsApp
 //
 //  Created by Ali Görkem Aksöz on 15.01.2023.
-// https://newsapi.org/v2/everything?q=turkey&apiKey=c5defaeacbbc4f70b4e4c6919736081c
-// https://jsonplaceholder.typicode.com/todos
+//
 
 import Foundation
 

@@ -16,7 +16,8 @@ protocol HomeViewModelInterface {
 
 final class HomeViewModel {
     weak var view: HomeViewControllerInterface?
-    var news = [News]()
+    var news = [Article]()
+    private let newsService = NewsService()
     
 }
 
@@ -25,10 +26,19 @@ extension HomeViewModel: HomeViewModelInterface {
     func viewDidLoad() {
         view?.configureVC()
         view?.configureTableView()
+        getNews()
+        
     }
     
     func getNews() {
-        
+        newsService.getNews { items, error in
+            if let items = items {
+                self.news = items
+                self.view?.reloadTable()
+//                print(self.news[1].title!)
+                
+            }
+        }
     }
     
 }

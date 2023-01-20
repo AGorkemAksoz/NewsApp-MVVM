@@ -10,6 +10,7 @@ import UIKit
 protocol HomeViewControllerInterface: AnyObject {
     func configureVC()
     func configureTableView()
+    func reloadTable()
 }
 
 class HomeViewController: UIViewController {
@@ -26,7 +27,12 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewControllerInterface {
-    
+    func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+
     func configureVC() {
         title = "News"
         view.backgroundColor = .systemCyan
@@ -49,17 +55,21 @@ extension HomeViewController: HomeViewControllerInterface {
         ])
     }
     
+
+    
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return homeViewModel.news.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+//        print(news[1].title)
+        cell.textLabel?.text = homeViewModel.news[indexPath.row].title
         
-//        cell.textLabel?.text = homeViewModel.todos[indexPath.row].title
         cell.backgroundColor = .systemCyan
         return cell
     }

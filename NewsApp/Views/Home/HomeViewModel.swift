@@ -20,7 +20,6 @@ final class HomeViewModel {
     private let newsService = NewsService()
     
 }
-
 extension HomeViewModel: HomeViewModelInterface {
     
     func viewDidLoad() {
@@ -31,12 +30,10 @@ extension HomeViewModel: HomeViewModelInterface {
     }
     
     func getNews() {
-        newsService.getNews { items, error in
+        newsService.getNewses { items, error in
             if let items = items {
                 self.news = items
                 self.view?.reloadTable()
-//                print(self.news[1].title!)
-                
             }
         }
     }

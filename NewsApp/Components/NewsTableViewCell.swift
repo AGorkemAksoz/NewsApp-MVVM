@@ -12,7 +12,7 @@ class NewsTableViewCell: UITableViewCell {
     static let identifier: String = "NewsTableViewCell"
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
-//    private let imageView = UIImage()
+    var newsImageView = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,20 +37,24 @@ class NewsTableViewCell: UITableViewCell {
     
     func configure() {
         self.addSubview(titleLabel)
-        titleLabel.numberOfLines = 1
+        titleLabel.numberOfLines = 0
         titleLabel.font = .boldSystemFont(ofSize: 24)
         self.addSubview(descriptionLabel)
-        descriptionLabel.numberOfLines = 2
+        descriptionLabel.numberOfLines = 3
         descriptionLabel.font = .systemFont(ofSize: 16, weight: .light)
+        self.addSubview(newsImageView)
+        
         
         makeTitleLabel()
         makeDescLabel()
+//        makeImageView()
         
     }
     
     func setup(article: Article) {
         titleLabel.text = article.title
         descriptionLabel.text = article.description
+        newsImageView.image = UIImage(named: article.urlToImage!)
     }
     
     func makeTitleLabel() {
@@ -74,5 +78,15 @@ class NewsTableViewCell: UITableViewCell {
             descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
         ])
     }
+    
+//    func makeImageView() {
+//        newsImageView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            newsImageView.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 6),
+//            newsImageView.topAnchor.constraint(equalTo: titleLabel.topAnchor),
+//            newsImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+//        ])
+//    }
 
 }

@@ -10,7 +10,7 @@ import Foundation
 final class NewsService {
     let networkManager = NetworkManager()
 
-    func getNews(completion: @escaping ([Article]?, String?) -> ()) {
+    func getNewses(completion: @escaping ([Article]?, String?) -> ()) {
         let url = URLBuilder().build()
         networkManager.request(type: News.self, url: url, method: .get) { response in
             switch response {
@@ -23,4 +23,6 @@ final class NewsService {
         }
         
     }
+    
+
 }

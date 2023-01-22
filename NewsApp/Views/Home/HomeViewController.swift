@@ -37,7 +37,7 @@ extension HomeViewController: HomeViewControllerInterface {
         title = "News"
         view.backgroundColor = .systemCyan
         self.tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
-        tableView.rowHeight = 100
+        tableView.rowHeight = 160
         
     }
     
@@ -46,7 +46,7 @@ extension HomeViewController: HomeViewControllerInterface {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .systemCyan
+        tableView.backgroundColor = .systemGray
         
 
         
@@ -72,10 +72,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as! NewsTableViewCell
 //        print(news[1].title)
         cell.setup(article: homeViewModel.news[indexPath.row])
-        
-        cell.backgroundColor = .systemCyan
+        cell.backgroundColor = .systemGray
         return cell
     }
+
     
     
 }

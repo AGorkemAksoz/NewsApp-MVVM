@@ -36,6 +36,9 @@ extension HomeViewController: HomeViewControllerInterface {
     func configureVC() {
         title = "News"
         view.backgroundColor = .systemCyan
+        self.tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
+        tableView.rowHeight = 100
+        
     }
     
     func configureTableView() {
@@ -66,9 +69,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as! NewsTableViewCell
 //        print(news[1].title)
-        cell.textLabel?.text = homeViewModel.news[indexPath.row].title
+        cell.setup(article: homeViewModel.news[indexPath.row])
         
         cell.backgroundColor = .systemCyan
         return cell

@@ -22,6 +22,7 @@ extension DetailViewModel: DetailViewModelInterface {
     
     func viewDidLoad() {
         view?.configureVC()
+        view?.configureWebView()
     }
     
     

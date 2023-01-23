@@ -63,6 +63,7 @@ extension HomeViewController: HomeViewControllerInterface {
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeViewModel.news.count
         
@@ -70,13 +71,19 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as! NewsTableViewCell
-//        print(news[1].title)
         cell.setup(article: homeViewModel.news[indexPath.row])
         cell.backgroundColor = .systemGray
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.setup(article: homeViewModel.news[indexPath.row])
+        
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 
-    
-    
 }
 
